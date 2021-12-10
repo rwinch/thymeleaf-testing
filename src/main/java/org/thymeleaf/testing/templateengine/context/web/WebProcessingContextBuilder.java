@@ -46,8 +46,8 @@ import org.mockito.Mockito;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import org.thymeleaf.context.IContext;
-import org.thymeleaf.context.IWebContext;
-import org.thymeleaf.context.WebContext;
+import org.thymeleaf.context.IJavaxWebContext;
+import org.thymeleaf.context.JavaxWebContext;
 import org.thymeleaf.testing.templateengine.context.IProcessingContextBuilder;
 import org.thymeleaf.testing.templateengine.context.ITestContext;
 import org.thymeleaf.testing.templateengine.context.ITestContextExpression;
@@ -152,8 +152,8 @@ public class WebProcessingContextBuilder implements IProcessingContextBuilder {
         variables.remove(SERVLETCONTEXT_ATTRS_PREFIX);
 
         doAdditionalVariableProcessing(test, request, response, servletContext, locale, variables);
-        
-        final IWebContext context =
+
+        final IJavaxWebContext context =
                 doCreateWebContextInstance(test, request, response, servletContext, locale, variables);
         
         return context;
@@ -171,11 +171,11 @@ public class WebProcessingContextBuilder implements IProcessingContextBuilder {
 
 
 
-    protected IWebContext doCreateWebContextInstance(
+    protected IJavaxWebContext doCreateWebContextInstance(
             final ITest test,
             final HttpServletRequest request, final HttpServletResponse response, final ServletContext servletContext,
             final Locale locale, final Map<String,Object> variables) {
-        return new WebContext(request, response, servletContext, locale, variables);
+        return new JavaxWebContext(request, response, servletContext, locale, variables);
     }
 
     

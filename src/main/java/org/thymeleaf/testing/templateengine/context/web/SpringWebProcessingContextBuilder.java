@@ -46,7 +46,7 @@ import org.springframework.web.context.support.XmlWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
 import org.springframework.web.servlet.support.RequestContext;
 import org.springframework.web.servlet.view.AbstractTemplateView;
-import org.thymeleaf.context.IWebContext;
+import org.thymeleaf.context.IJavaxWebContext;
 import org.thymeleaf.spring5.naming.SpringContextVariableNames;
 import org.thymeleaf.testing.templateengine.exception.TestEngineExecutionException;
 import org.thymeleaf.testing.templateengine.testable.ITest;
@@ -162,7 +162,7 @@ public class SpringWebProcessingContextBuilder extends WebProcessingContextBuild
 
 
 
-    protected IWebContext doCreateWebContextInstance(
+    protected IJavaxWebContext doCreateWebContextInstance(
             final ITest test,
             final HttpServletRequest request, final HttpServletResponse response, final ServletContext servletContext,
             final Locale locale, final Map<String,Object> variables) {

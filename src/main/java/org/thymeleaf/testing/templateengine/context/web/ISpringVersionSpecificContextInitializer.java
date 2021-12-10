@@ -28,7 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.convert.ConversionService;
-import org.thymeleaf.context.IWebContext;
+import org.thymeleaf.context.IJavaxWebContext;
 
 
 interface ISpringVersionSpecificContextInitializer {
@@ -40,7 +40,7 @@ interface ISpringVersionSpecificContextInitializer {
             final Map<String,Object> variables);
 
 
-    IWebContext versionSpecificCreateContextInstance(
+    IJavaxWebContext versionSpecificCreateContextInstance(
             final ApplicationContext applicationContext, final HttpServletRequest request,
             final HttpServletResponse response, final ServletContext servletContext,
             final Locale locale, final Map<String,Object> variables);

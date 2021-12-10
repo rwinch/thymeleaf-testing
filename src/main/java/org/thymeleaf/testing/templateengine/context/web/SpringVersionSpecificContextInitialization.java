@@ -30,7 +30,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.convert.ConversionService;
-import org.thymeleaf.context.IWebContext;
+import org.thymeleaf.context.IJavaxWebContext;
 import org.thymeleaf.exceptions.ConfigurationException;
 import org.thymeleaf.testing.templateengine.util.SpringVersionUtils;
 import org.thymeleaf.util.ClassLoaderUtils;
@@ -95,7 +95,7 @@ final class SpringVersionSpecificContextInitialization {
 
 
 
-    static IWebContext versionSpecificCreateContextInstance(
+    static IJavaxWebContext versionSpecificCreateContextInstance(
             final ApplicationContext applicationContext, final HttpServletRequest request,
             final HttpServletResponse response, final ServletContext servletContext,
             final Locale locale, final Map<String,Object> variables) {

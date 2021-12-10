@@ -30,8 +30,8 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.core.convert.ConversionService;
 import org.springframework.web.servlet.support.RequestContext;
 import org.springframework.web.servlet.view.AbstractTemplateView;
-import org.thymeleaf.context.IWebContext;
-import org.thymeleaf.context.WebContext;
+import org.thymeleaf.context.IJavaxWebContext;
+import org.thymeleaf.context.JavaxWebContext;
 import org.thymeleaf.spring5.context.webmvc.SpringWebMvcThymeleafRequestContext;
 import org.thymeleaf.spring5.expression.ThymeleafEvaluationContext;
 import org.thymeleaf.spring5.naming.SpringContextVariableNames;
@@ -70,12 +70,12 @@ final class Spring5VersionSpecificContextInitializer implements ISpringVersionSp
     }
 
 
-    public IWebContext versionSpecificCreateContextInstance(
+    public IJavaxWebContext versionSpecificCreateContextInstance(
             final ApplicationContext applicationContext, final HttpServletRequest request,
             final HttpServletResponse response, final ServletContext servletContext,
             final Locale locale, final Map<String, Object> variables) {
 
-        return new WebContext(request, response, servletContext, locale, variables);
+        return new JavaxWebContext(request, response, servletContext, locale, variables);
 
     }
 
